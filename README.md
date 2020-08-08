@@ -20,11 +20,5 @@ cookiecutter-mystl produces.
 
 ## Requests for Contributions
 
-Contributions welcome!  Here are some of the directions I'd like to see
-cookiecutter-mystl project grow:
-
- - integrations with other hosting and CI services (gitlab, travis, etc)
- - improve lightbox & 3d viewer
- - work with other file types (.stp? FreeCAD?)
- - display & download bill of material for non 3d-printed parts
- 
+Contributions welcome!  See the issue tracker, especially items tagged "enhancement"
+and "help wanted".
