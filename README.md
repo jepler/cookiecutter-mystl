@@ -26,3 +26,5 @@ cookiecutter-mystl project grow:
  - integrations with other hosting and CI services (gitlab, travis, etc)
  - improve lightbox & 3d viewer
  - work with other file types (.stp? FreeCAD?)
+ - display & download bill of material for non 3d-printed parts
+ 
