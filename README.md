@@ -2,6 +2,7 @@
 
 A Jekyll (github pages) boilerplate for hosting your own STL files.
 For use with [cookiecutter](https://github.com/audreyr/cookiecutter).
+Once you've installed cookiecutter, simply run `cookiecutter gh:jepler/cookiecutter-mystl` and answer the prompts.
 
 ## License
 
