@@ -1,0 +1,41 @@
+name: Build and Publish Website
+
+on:
+  push:
+  pull_request:
+  release:
+    types: [published]
+  check_suite:
+    types: [rerequested]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    container: debian:buster
+
+    steps:
+    - name: install dependencies
+      run: |
+        apt-get update
+        apt-get --no-install-recommends -y install admesh git imagemagick jekyll make openscad python3 python3-yaml xauth xvfb
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: build
+      run: |
+        xvfb-run make V=2 -O -j$(nproc) jekyll
+    - if: github.event_name == 'push' && github.ref == 'refs/heads/{{ cookiecutter.main_branch_name }}'
+      name: publish
+      run: |
+{% raw %}
+        git config user.name "${GITHUB_ACTOR}"
+        git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+        git remote set-url --push origin https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        make -O V=1 publish
+{% endraw %}
+    - if: github.event_name != 'push' || github.ref != 'refs/heads/{{ cookiecutter.main_branch_name }}'
+      name: artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: website
+        path: _site
+

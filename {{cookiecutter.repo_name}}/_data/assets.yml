@@ -1,0 +1,12 @@
+- name: Featureless Cube
+  scad: main.scad
+  stl: gen/main.stl
+  images: ['gen/main.png']
+
+- name: Monolith from 2001
+  notes: ""
+  scad: main.scad
+  flags: -Dsize=[1,4,9]
+  stl: gen/monolith.stl
+  images: ['gen/monolith.png', 'HAL_2001_monolith.jpg']
+  downloads: ['monolith.txt']

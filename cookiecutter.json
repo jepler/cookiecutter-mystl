@@ -1,0 +1,10 @@
+{
+    "project_name": "MySTL",
+    "repo_name": "mystl",
+    "main_branch_name": ["master", "main"],
+    "author": "Jeff Epler",
+    "copyrightyears" : "{% now 'local', '%Y' %}",
+    "project_short_description": "Demonstration site for MySTL",
+    "license": ["CC-BY", "CC-BY-SA", "CC-BY-NC", "CC-BY-NC-SA", "CC-BY-ND", "CC-BY-NC-ND", "CC0", "GPL-3.0-or-later", "GPL-3.0-only"],
+    "_extensions": ["jinja2_time.TimeExtension"]
+}

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ cookiecutter.project_short_description }}">
+  <meta name="author" content="{{ cookiecutter.author }}">
+  {% raw %}
+  {% capture lvl %}{{ page.url | append:'index.html' | split:'/' | size }}{% endcapture %}
+  {% capture relative %}{% for i in (3..lvl) %}../{% endfor %}{% endcapture %}
+  <link href='http://fonts.googleapis.com/css?family=Arvo:400,700|PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href="{{ relative }}resources/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ relative }}resources/css/style.css" rel="stylesheet">
+  <link href="{{ relative }}resources/css/lightbox.css" rel="stylesheet">
+  <script src="{{ relative }}resources/js/three.min.js"></script>
+  <script src="{{ relative }}resources/js/STLLoader.js"></script>
+  <script src="{{ relative }}resources/js/OrbitControls.js"></script>
+  <script src="{{ relative }}resources/js/stlviewer.js"></script>
+  <script src="{{ relative }}resources/js/lightbox.js"></script>
+  <title>{{ page.title }}</title>
+  {% endraw %}
+ </head>
+ <body>
+  <div class="wrapper">
+   <div id="header">
+    <div class="container">
+    {% raw %}
+     <h1>{{ page.title }}</h1>
+    {% endraw %}
+    </div>
+   </div>
+   {% raw %}
+   <div id="content">
+    <div class="container">
+      {{ content }}
+    </div>
+   </div>
+   {% endraw %}
+  </div>
+  <hr>
+  <div id="footer">
+   <div class="container">
+    <p>
+    {% raw %}
+    This 3D printable project is offered under <a href="{{ relative }}LICENSE.html">an open source license</a>.
+    The site is built with software under <a href="{{ relative }}other-licenses.html">various open source licenses</a>.
+    {% endraw %}
+    Create your own MySTL site with <a href="https://github.com/jepler/cookiecutter-mystl">cookiecutter-mystl</a>.
+
+    </p>
+    <a class="pull-right" href="#">Back to top</a>
+   </div>
+  </div>
+ </body>
+</html>

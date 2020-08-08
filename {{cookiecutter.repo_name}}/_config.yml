@@ -1,0 +1,2 @@
+exclude: [README.md,Makefile,resources/gen/rules.mk,.*,resources/gen/*.d]
+highligter: rouge
