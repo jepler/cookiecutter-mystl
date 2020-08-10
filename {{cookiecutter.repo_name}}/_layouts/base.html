@@ -43,6 +43,9 @@
     <p>
     {% raw %}
     This 3D printable project is offered under <a href="{{ relative }}LICENSE.html">an open source license</a>.
+{% if site.sourceurl and site.sourceurl != "" %}
+    The source is managed at <a href="{{ site.sourceurl }}">{{ site.sourceurl }}</a>.
+{% endif %}
     The site is built with software under <a href="{{ relative }}other-licenses.html">various open source licenses</a>.
     {% endraw %}
     Create your own MySTL site with <a href="https://github.com/jepler/cookiecutter-mystl">cookiecutter-mystl</a>.

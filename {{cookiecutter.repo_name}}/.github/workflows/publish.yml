@@ -22,7 +22,8 @@ jobs:
       uses: actions/checkout@v2
     - name: build
       run: |
-        xvfb-run make V=2 -O -j$(nproc) jekyll
+        echo "sourceurl: https://github.com/${GITHUB_REPOSITORY}" >> _config.yml
+        env JEKYLL_ENV=production xvfb-run make V=2 -O -j$(nproc) jekyll
     - if: github.event_name == 'push' && github.ref == 'refs/heads/{{ cookiecutter.main_branch_name }}'
       name: publish
       run: |
