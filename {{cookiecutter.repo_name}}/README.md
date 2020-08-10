@@ -6,8 +6,6 @@ This is a project created with [cookiecutter-mystl](https://github.com/jepler/co
 Use cookiecutter-mystl to host your own OpenSCAD and STL models!
 Have improvements to your site?  Contribute them back to cookiecutter-mystl!
 
-My STL
-
 ## Requirements
 
 See .github/workflows/publish.yml for the canonical requirements.
