@@ -10,7 +10,8 @@ def step(args):
 try:
     subprocess.run(['git', 'version'], check=True)
 except subprocess.CalledProcessError as e:
-    print("Coult not execute git - Did not create initial commit"
+    print("Could not execute git - Did not create initial commit")
+    raise SystemExit
 
 step(["git", "init"])
 step(["git", "add", "."])
